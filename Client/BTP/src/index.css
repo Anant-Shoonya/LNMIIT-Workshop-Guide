@@ -11,18 +11,22 @@ label{
   font-size: 20px;
 }
 
-html,
-body{
+html,body{
   height: 100%;
   width: 100%;
 }
 
 body{
+  margin: 0;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+canvas {
+  display: block;
+}
 .container{
   background-color: #FFF;
   padding: 32px 48px;
