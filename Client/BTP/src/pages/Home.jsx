@@ -53,7 +53,7 @@ const Home = () => {
           Machines in MME Workshop
         </div>
         <div className="card" onClick={() => navigateToPage('/chatbot')}>
-          ChatBot
+          Entrepreneurship
         </div>
         <div className="card" onClick={() => navigateToPage('/scanner')}>
           Scanner
