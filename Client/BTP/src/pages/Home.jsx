@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import '../styles/Home.css'; // Add a new CSS file for Home styles
+import '../styles/Home.css';
 
 const Home = () => {
   const [loggedInUser, setLoggedInUser] = useState('');
+  const [profileImage, setProfileImage] = useState(localStorage.getItem('profileImage') || '');
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const user = localStorage.getItem('loggedInUser');
-    setLoggedInUser(user || 'User'); // Fallback if no name is found
+    setLoggedInUser(user || 'User');
   }, []);
 
   const handleLogout = () => {
@@ -23,28 +24,47 @@ const Home = () => {
     }, 1000);
   };
 
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        localStorage.setItem('profileImage', reader.result);
+        setProfileImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const navigateToPage = (path) => {
     navigate(path);
   };
 
-
-
   return (
     <div className="home-container">
-      {/* Top Bar */}
-      <div className="top-bar">
-        <div className="welcome-section">
-          <img
-            src="https://via.placeholder.com/40" // Replace this with user's profile photo URL if available
-            alt="User Avatar"
-            className="avatar"
+      {/* Header */}
+      <header className="header">
+        <div className="header-left">
+          <label htmlFor="profile-upload">
+            <img
+              src={profileImage || 'https://via.placeholder.com/40'}
+              alt="User Avatar"
+              className="avatar"
+            />
+          </label>
+          <input
+            type="file"
+            id="profile-upload"
+            accept="image/*"
+            style={{ display: 'none' }}
+            onChange={handleProfileImageChange}
           />
-          <span className="welcome-text">Welcome, {loggedInUser}</span>
+          <span className="welcome-text">Welcome, {loggedInUser}!</span>
         </div>
         <button className="logout-button" onClick={handleLogout}>
           Logout
         </button>
-      </div>
+      </header>
 
       {/* Main Content */}
       <h1 className="home-title">Explore Features</h1>
