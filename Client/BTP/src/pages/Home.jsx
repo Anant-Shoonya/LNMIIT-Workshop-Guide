@@ -1,66 +1,19 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as THREE from 'three';
 import { ToastContainer } from 'react-toastify';
 import { handleSuccess } from '../utils';
 import '../styles/Home.css';
+import homeImage from '../assets/home.jpg';
 
 const Home = () => {
   const [loggedInUser, setLoggedInUser] = useState('');
   const [profileImage, setProfileImage] = useState(localStorage.getItem('profileImage') || '');
-  const canvasRef = useRef(null);
+  const [chatOpen, setChatOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const user = localStorage.getItem('loggedInUser');
     setLoggedInUser(user || 'User');
-
-    // Background animation (Three.js)
-    const canvas = canvasRef.current;
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.z = 50;
-
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particleCount = 5000;
-    const positions = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 200;
-    }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 1.5,
-      color: 0xffffff,
-      transparent: true,
-      opacity: 0.7,
-    });
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particles);
-
-    const animateParticles = () => {
-      particles.rotation.y += 0.001;
-    };
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      animateParticles();
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      renderer.dispose();
-    };
   }, []);
 
   const handleLogout = () => {
@@ -86,27 +39,59 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <canvas ref={canvasRef} className="background-canvas"></canvas>
-      <div className="home-content">
-        <label htmlFor="profile-upload">
-          <img
-            src={profileImage || 'https://via.placeholder.com/100'}
-            alt="User Avatar"
-            className="avatar"
+      {/* Header */}
+      <header className="header">
+        <div className="header-left">
+          <label htmlFor="profile-upload">
+            <img
+              src={profileImage || 'https://via.placeholder.com/50'}
+              alt="User Avatar"
+              className="avatar"
+            />
+          </label>
+          <input
+            type="file"
+            id="profile-upload"
+            accept="image/*"
+            style={{ display: 'none' }}
+            onChange={handleProfileImageChange}
           />
-        </label>
-        <input
-          type="file"
-          id="profile-upload"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={handleProfileImageChange}
-        />
-        <h1 className="welcome-text">Welcome, {loggedInUser}!</h1>
+          <h2>Welcome, {loggedInUser}!</h2>
+        </div>
         <button className="logout-button" onClick={handleLogout}>
           Logout
         </button>
+      </header>
+
+      {/* Main Content */}
+      <div className="home-content">
+        <div className="section first-section">
+          <h1>Welcome to LNMIIT Mechanical and Mechatronics Department Workshop Guide</h1>
+        </div>
+        <div className="section">Machines in MME Workshop</div>
+        <div className="section">Scanner</div>
+        <div className="section">Study Material</div>
+        <div className="section">Entrepreneurial World</div>
+        <div className="section">About MME</div>
       </div>
+
+      {/* Chatbot Button */}
+      <div className="chatbot-container">
+        <button className="chatbot-button" onClick={() => setChatOpen(!chatOpen)}>
+          💬
+        </button>
+        {chatOpen && (
+          <div className="chat-window">
+            <p>Chatbot will be here!</p>
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2025 Your Website. All Rights Reserved.</p>
+      </footer>
+
       <ToastContainer />
     </div>
   );
