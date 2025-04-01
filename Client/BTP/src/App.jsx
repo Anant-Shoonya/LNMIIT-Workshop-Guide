@@ -6,6 +6,10 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
 import RefreshHandler from './pages/RefreshHandler'
+import Machines from './pages/Machines'
+import About from './pages/About'
+import StudyMat from './pages/StudyMat'
+import EntreWorld from './pages/EntreWorld'
 
 function App() {
 
@@ -23,6 +27,10 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/home' element={<PrivateRoute element={<Home/>}/>} />
+        <Route path='/machines' element={<Machines/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/studyMat' element={<StudyMat/>}/>
+        <Route path='/entreWorld' element={<EntreWorld/>}/>
       </Routes>
     </div>
   )

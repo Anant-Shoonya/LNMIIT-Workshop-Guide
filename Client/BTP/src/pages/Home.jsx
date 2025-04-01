@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { handleSuccess } from '../utils';
 import '../styles/Home.css';
@@ -66,13 +66,13 @@ const Home = () => {
       {/* Main Content */}
       <div className="home-content">
         <div className="section first-section">
-          <h1>Welcome to LNMIIT Mechanical and Mechatronics Department Workshop Guide</h1>
+          {/* <h1>Welcome to LNMIIT Mechanical and Mechatronics Department Workshop Guide</h1> */}
         </div>
-        <div className="section">Machines in MME Workshop</div>
+        <div className="section">Machines in MME Workshop<button><Link to="/machines">Get Started</Link></button></div>
         <div className="section">Scanner</div>
-        <div className="section">Study Material</div>
-        <div className="section">Entrepreneurial World</div>
-        <div className="section">About MME</div>
+        <div className="section">Study Material<button><Link to="/studyMat">Get Started</Link></button></div>
+        <div className="section">Entrepreneurial World<button><Link to="/entreWorld">Get Started</Link></button></div>
+        <div className="section">About MME<button><Link to="/about">Get Started</Link></button></div>
       </div>
 
       {/* Chatbot Button */}
