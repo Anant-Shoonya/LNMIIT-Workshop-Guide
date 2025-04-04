@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *,
 ::before,
@@ -6,6 +9,10 @@
   padding: 0;
   margin: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+} 
 
 label{
   font-size: 20px;

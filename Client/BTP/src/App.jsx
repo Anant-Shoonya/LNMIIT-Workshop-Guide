@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import "./index.css";
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
@@ -10,6 +10,7 @@ import Machines from './pages/Machines'
 import About from './pages/About'
 import StudyMat from './pages/StudyMat'
 import EntreWorld from './pages/EntreWorld'
+
 
 function App() {
 
@@ -24,13 +25,13 @@ function App() {
     <RefreshHandler setIsAuthenticated={setIsAuthenticated}/>
       <Routes>
         <Route path='/' element={<Navigate to="/login" />} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/home' element={<PrivateRoute element={<Home/>}/>} />
-        <Route path='/machines' element={<Machines/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/studyMat' element={<StudyMat/>}/>
-        <Route path='/entreWorld' element={<EntreWorld/>}/>
+        <Route path='login' element={<Login/>} />
+        <Route path='signup' element={<Signup/>} />
+        <Route path="/home" element={<PrivateRoute element={<Home />} />} />
+        <Route path="/machines" element={<PrivateRoute element={<Machines />} />} />
+        <Route path="/about" element={<PrivateRoute element={<About />} />} />
+        <Route path="/studyMat" element={<PrivateRoute element={<StudyMat />} />} />
+        <Route path="/entreWorld" element={<PrivateRoute element={<EntreWorld />} />} />
       </Routes>
     </div>
   )

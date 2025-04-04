@@ -66,6 +66,22 @@
   background: url('../assets/home.jpg') no-repeat center center/cover;
 }
 
+.second-section{
+  background: url('../assets/machineshop.jpg') no-repeat center center/cover;
+}
+
+.third-section{
+  background: url('../assets/scanner img.jpg') no-repeat center center/cover;
+}
+
+.fourth-section{
+  background: url('../assets/studymat.webp') no-repeat center center/cover;
+}
+
+.fifth-section{
+  background: url('../assets/enter.webp') no-repeat center center/cover;
+}
+
 /* Chatbot Button */
 .chatbot-container {
   position: fixed;
