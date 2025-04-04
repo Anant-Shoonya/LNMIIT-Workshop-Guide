@@ -24,6 +24,13 @@ const Home = () => {
     }, 1000);
   };
 
+  const handleEntreWorld = () => {
+    handleSuccess('Welcome to Entrepreneuship World !');
+    setTimeout(() => {
+      navigate('/entreWorld');
+    }, 1000);
+  };
+
   const handleProfileImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -124,8 +131,8 @@ const Home = () => {
               Learn about the entrepreneurial aspects of mechanical engineering. Get insights on 
               innovation, product development, and launching your own startup in the engineering field.
             </p>
-            <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700" >
-              <Link to="/entreWorld">Get Started</Link></button>
+            <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700" onClick={handleEntreWorld}>
+              Get Started </button>
           </div>
         </div>
 
