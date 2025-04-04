@@ -1,2 +1,5 @@
 Things which i have installed for user authentication :
-npm i react-router-dom react-toastify three
+npm i react-router-dom react-toastify three 
+
+for tailwind:
+npm install tailwindcss @tailwindcss/vite

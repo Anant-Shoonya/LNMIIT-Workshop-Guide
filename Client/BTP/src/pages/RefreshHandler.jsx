@@ -8,10 +8,16 @@ function RefreshHandler({ setIsAuthenticated }) {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsAuthenticated(true);
-      if (location.pathname !== "/home") {
-        navigate("/home", { replace: false });
-      } else if (location.pathname === "/entreWorld") {
+      if (location.pathname === "/entreWorld") {
         navigate("/entreWorld", { replace: true });
+      } else if (location.pathname === "/about") {
+        navigate("/about", { replace: true });
+      } else if (location.pathname === "/machines") {
+        navigate("/machines", { replace: true });
+      } else if (location.pathname === "/studyMat") {
+        navigate("/studyMat", { replace: true });
+      } else if (location.pathname !== "/home") {
+        navigate("/home", { replace: false });
       }
     }
   }, [location, navigate, setIsAuthenticated]);
