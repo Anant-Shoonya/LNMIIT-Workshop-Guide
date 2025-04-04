@@ -16,9 +16,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background:   rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 10px 20px;
+  padding: 0px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,10 +64,137 @@
 /* Background Image for First Section */
 .first-section {
   background: url('../assets/home.jpg') no-repeat center center/cover;
+  position: relative; /* Allows absolute positioning for overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Brown Overlay */
+.first-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 18, 18, 0.6); /* Transparent brown overlay */
+}
+
+/* Engraved 3D Text */
+.first-section h1 {
+  position: relative; /* Ensures it's above the overlay */
+  font-size: 3rem; /* Large royal text */
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 
+    2px 2px 0px #000000, /* Top left shadow */
+    -2px -2px 0px #4c3333, /* Bottom right shadow */
+    4px 4px 6px rgba(0, 0, 0, 0.8); /* Deep black shadow for depth */
+  z-index: 1; /* Ensures it appears above overlay */
 }
 
 .second-section{
-  background: url('../assets/machineshop.jpg') no-repeat center center/cover;
+  background: #cc9466; /* Brown background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  min-height: 100vh;
+}
+
+.machines-left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+
+/* Engraved 3D Text Effect */
+.machines-left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 
+    2px 2px 0px #7a5a3f, 
+    -2px -2px 0px #402d1a, 
+    4px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+.machines-left p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: white;
+  text-shadow: 
+    1px 1px 0px #7a5a3f, 
+    -1px -1px 0px #402d1a, 
+    2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Button Styling */
+.machines-left button {
+  background: #8b5a2b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.machines-left button:hover {
+  background: #7a4f24;
+  transform: scale(1.05);
+}
+
+/* Right Content - 70% */
+.machines-right {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Three image containers */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+}
+
+/* Image Styling */
+.image-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Animation for Image Looping */
+@keyframes slide {
+  0% { opacity: 1; }
+  33% { opacity: 0; }
+  66% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.image-container img:nth-child(1) {
+  animation: slide 9s infinite;
+}
+.image-container img:nth-child(2) {
+  animation: slide 9s infinite 3s;
+}
+.image-container img:nth-child(3) {
+  animation: slide 9s infinite 6s;
 }
 
 .third-section{
@@ -128,7 +255,7 @@
   text-align: center;
   padding: 10px;
   background: rgba(0, 0, 0, 0.8);
-  position: fixed;
+  
   bottom: 0;
   left: 0;
 }
