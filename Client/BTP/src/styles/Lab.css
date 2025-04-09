@@ -1,57 +1,183 @@
-/* Labs.css */
-
+/* General Reset */
+html,
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #f4f4f4, #e9ecef);
+  overflow-x: hidden;
+}
+
+/* Container for Labs */
+.labs-container {
+  width: 100%;
+  height: auto;
+  padding: 40px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Header */
+.labs-header {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  color: #343a40;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid Layout */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Card Design */
+.lab-card {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lab-card:nth-child(2n) {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Blue gradient */
+  }
+
+.lab-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Styling */
+.lab-title {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lab-semester {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Modal Styles */
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
   }
   
-  .labs-container {
-    width: 100%;
-    min-height: 100vh;
-    padding: 20px;
-    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  .modal-container {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 60vh; /* Fixed maximum height */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    overflow: hidden; /* Ensures content doesn't overflow outside the modal */
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   
-  .labs-header {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .modal-header {
+    font-size: 1.8rem;
     text-transform: uppercase;
-    color: #343a40;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .labs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .lab-card {
-    background: white;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
     text-align: center;
-    padding: 20px;
+    
+  }
+  
+  .modal-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Adds vertical scrolling if content exceeds max height */
+    padding-right: 10px; /* Ensure content doesn't touch the scrollbar */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .modal-list-item {
+    padding: 10px;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
   }
   
-  .lab-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
-    border-color: #007bff;
+  .modal-list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   }
   
-  .lab-title {
-    font-size: 1.2rem;
-    color: #495057;
-    text-transform: capitalize;
+  .modal-list-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    color: #000;
   }
   

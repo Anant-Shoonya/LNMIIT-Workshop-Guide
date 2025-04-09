@@ -4,6 +4,11 @@ import "../styles/StudyMat.css";
 
 const StudyMaterial = () => {
   const navigate = useNavigate();
+
+  const handleLabs = () => {
+    navigate('/studyMat/labs');
+  };
+
   return (
     <div className="study-material-container mx-auto w-full">
       {/* Header */}
@@ -12,16 +17,16 @@ const StudyMaterial = () => {
       {/* Sections */}
       <div className="study-material-sections">
         {/* Labs Section */}
-        <div className="study-section labs-section">
+        <div className="study-section labs-section" onClick={handleLabs} >
           <h2>Labs</h2>
           <p>Hands-on resources and guides for workshop labs.</p>
         </div>
 
         {/* Theory Section */}
-        <Link to="/studyMat/labs" ><div className="study-section theory-section  ">
+        <div className="study-section theory-section">
           <h2 className=" mt-[-8px] " >Theory</h2>
           <p>In-depth explanations, detailed analysis, and study notes.</p>
-        </div></Link>
+        </div>
 
         {/* Interview Section */}
         <div className="study-section interview-section">

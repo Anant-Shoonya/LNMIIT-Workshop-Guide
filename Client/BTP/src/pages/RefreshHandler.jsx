@@ -16,8 +16,8 @@ function RefreshHandler({ setIsAuthenticated }) {
         navigate("/machines", { replace: true });
       } else if (location.pathname === "/studyMat") {
         navigate("/studyMat", { replace: true });
-      } else if (location.pathname === "/labs") {
-        navigate("/labs", { replace: true });
+      } else if (location.pathname === "/studyMat/labs") {
+        navigate("/studyMat/labs", { replace: true });
       } else if (location.pathname !== "/home") {
         navigate("/home", { replace: false });
       }
