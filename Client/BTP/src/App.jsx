@@ -10,6 +10,8 @@ import Machines from "./pages/Machines";
 import About from "./pages/About";
 import StudyMat from "./pages/StudyMat";
 import EntreWorld from "./pages/EntreWorld";
+import StudyMaterial from "./pages/StudyMat";
+import Lab from "./pages/Lab";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,6 +32,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/studyMat" element={<StudyMat />} />
         <Route path="/entreWorld" element={<EntreWorld />} />
+        <Route path="/studyMat/labs" element={<Lab />} />
       </Routes>
     </div>
   );
