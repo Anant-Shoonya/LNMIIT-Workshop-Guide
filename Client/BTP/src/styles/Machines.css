@@ -1,0 +1,91 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+} */
+
+.machines-page {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100%;
+    background: #f7f7f7;
+  }
+  
+  .machine-section {
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .machine-text {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .machine-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .machine-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .explore-button {
+    padding: 10px 18px;
+    font-size: 1rem;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  }
+  
+  .explore-button:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+  }
+  
+  .machine-image {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .machine-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #3b82f6;
+    transform: scale(1.05);
+  }
+  

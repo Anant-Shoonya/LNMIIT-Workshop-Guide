@@ -5,7 +5,6 @@ import { ToastContainer } from "react-toastify";
 import { handleSuccess } from "../utils";
 import "../styles/Home.css";
 
-
 const Home = () => {
   const [loggedInUser, setLoggedInUser] = useState("");
   const [profileImage, setProfileImage] = useState(
@@ -17,6 +16,37 @@ const Home = () => {
   useEffect(() => {
     const user = localStorage.getItem("loggedInUser");
     setLoggedInUser(user || "User");
+
+    const windows = document.querySelectorAll(".image-window");
+
+    windows.forEach((window) => {
+      let isScrolling = false;
+
+      const scrollHandler = (e) => {
+        e.preventDefault();
+        if (isScrolling) return;
+
+        const direction = e.deltaY > 0 ? 1 : -1;
+        const scrollAmount = window.clientHeight;
+
+        isScrolling = true;
+
+        window.scrollBy({
+          top: direction * scrollAmount,
+          behavior: "smooth",
+        });
+
+        setTimeout(() => {
+          isScrolling = false;
+        }, 500); // debounce time
+      };
+
+      window.addEventListener("wheel", scrollHandler, { passive: false });
+
+      return () => {
+        window.removeEventListener("wheel", scrollHandler);
+      };
+    });
   }, []);
 
   const handleLogout = () => {
@@ -86,38 +116,42 @@ const Home = () => {
         </div>
 
         <div id="machines" className="section second-section">
-          {/* Left Side - Text Content */}
-          <div className="machines-left">
-            <h1>Machines in MME Workshop</h1>
-            <p>
-              Explore the different types of machines available in the
-              Mechanical and Mechatronics Engineering workshop. Learn about
-              their functions, operations, and safety measures.
-            </p>
-            <button onClick={() => navigate("/machines")}>Get Started</button>
-          </div>
-
-          {/* Right Side - Image Loop */}
-          <div className="machines-right">
-            {/* First Image Column */}
-            <div className="image-container">
-              <img src="../assets/mach-1.jpg" alt="Machine 1" />
-              <img src="../assets/mach-2.jpg" alt="Machine 2" />
-              <img src="../assets/mach-3.jpg" alt="Machine 3" />
+          <div className="machines-content">
+            {/* Title and Description */}
+            <div className="machines-text">
+              <h1>Machines in MME Workshop</h1>
+              <p>
+                Explore the different types of machines available in the
+                Mechanical and Mechatronics Engineering workshop. Learn about
+                their functions, operations, and safety measures.
+              </p>
             </div>
 
-            {/* Second Image Column */}
-            <div className="image-container">
-              <img src="../assets/mach-4.jpg" alt="Machine 4" />
-              <img src="../assets/mach-5.jpg" alt="Machine 5" />
-              <img src="../assets/mach-6.jpg" alt="Machine 6" />
+            {/* Image Windows */}
+            <div className="machines-right">
+              {/* Window 1 */}
+              <div className="image-window">
+                <img src="/assets/mach-1.jpg" alt="Machine 1" />
+                <img src="/assets/mach-2.jpg" alt="Machine 2" />
+                <img src="/assets/mach-3.jpg" alt="Machine 3" />
+              </div>
+              {/* Window 2 */}
+              <div className="image-window">
+                <img src="/assets/mach-4.jpg" alt="Machine 4" />
+                <img src="/assets/mach-5.jpg" alt="Machine 5" />
+                <img src="/assets/mach-6.jpg" alt="Machine 6" />
+              </div>
+              {/* Window 3 */}
+              <div className="image-window">
+                <img src="/assets/mach-7.jpg" alt="Machine 7" />
+                <img src="/assets/mach-8.jpg" alt="Machine 8" />
+                <img src="/assets/mach-9.jpg" alt="Machine 9" />
+              </div>
             </div>
 
-            {/* Third Image Column */}
-            <div className="image-container">
-              <img src="../assets/mach-7.jpg" alt="Machine 7" />
-              <img src="../assets/mach-8.jpg" alt="Machine 8" />
-              <img src="../assets/mach-9.jpg" alt="Machine 9" />
+            {/* Button */}
+            <div className="machines-button">
+              <button onClick={() => navigate("/machines")}>Get Started</button>
             </div>
           </div>
         </div>
