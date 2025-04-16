@@ -14,7 +14,6 @@ const Labs = () => {
             { title: "PROJECTION OF POINTS-LINES", url: "https://docs.google.com/presentation/d/1_eLzS-muAQC57WVPQs21uJtvJ2EWpfhr/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
             { title: "PROJECTION OF SOLIDS", url: "https://docs.google.com/presentation/d/1DvzgSCfM4srgCosHJrFkfrAmPtKi_EWu/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
             { title: "SECTION OF SOLID", url: "https://docs.google.com/presentation/d/1WQpd1wJfnzGWdO78-zpvIgsy5k1P6-U8/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" }
-            //{ title: "SECTION OF SOLID", url: "https://docs.google.com/presentation/d/1WQpd1wJfnzGWdO78-zpvIgsy5k1P6-U8/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" }
           ],
         },
         {
@@ -122,8 +121,16 @@ const Labs = () => {
           name: "Heat Transfer Lab",
           semester: "5th Semester",
           documents: [
-            { title: "Heat Transfer Notes", url: "https://example.com/heat-transfer-notes" },
-            { title: "Practical Examples", url: "https://example.com/practical-examples" },
+            { title: "chf manual", url: "https://drive.google.com/file/d/1e1Om_AXMAnZF0qHzEMcEe3Jxq0CUbwjX/view?usp=sharing" },
+            { title: "emissivity messurment", url: "https://drive.google.com/file/d/1wRqFA0RYWaZnC8u0UlF7f59F-H8cpsuO/view?usp=sharing" },
+            { title: "forced convection", url: "https://docs.google.com/document/d/13OauHdaPVUv_hkTYjK8HIb2q6IIek_Fy/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "heat pipe", url: "https://docs.google.com/document/d/1nb-x8RCNCQoojantwYw_eMA5UGvPAa8f/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "liquid", url: "https://docs.google.com/document/d/1qj383PbKqhYq_NLJIJ9MbQJ43TNSPu2_/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "Natural convection", url: "https://docs.google.com/document/d/10UVyB-VNwOyCT7YDLvDepAZQIxOoQFO1/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "metal rod experiment", url: "https://drive.google.com/file/d/1JS70dw4s3g4AGqncPCWsUM4RXlszxgRf/view?usp=sharing" },
+            { title: "prallel flow and counter flow", url: "https://drive.google.com/file/d/1sqaVtPr7KpJ_MlpVFI2K8SZDb1TXWbzO/view?usp=sharing" },
+            { title: "stefan bolzman", url: "https://docs.google.com/document/d/1BF124CNMYIK-8_zPab4LgjCCmBP0_SdQ/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "Temperature Profile In Extended Surface", url: "https://drive.google.com/file/d/1U6GtvW-u9qi0k6Bo5VMZj1xc6wGwE36T/view?usp=sharing" }
           ],
         },
         {

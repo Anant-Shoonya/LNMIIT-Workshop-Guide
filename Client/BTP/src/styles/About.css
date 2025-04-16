@@ -1,0 +1,272 @@
+/* Global Styling */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f7f9fc;
+    color: #2c3e50;
+  }
+  
+  /* Container Styling */
+  .about-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6eff8);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Header Styling */
+  /* Header Styling */
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Header Styling */
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative; /* Necessary for underline positioning */
+}
+
+.about-title {
+    font-size: 50px; /* Larger font size for emphasis */
+    font-weight: bold;
+    color: #0056b3; /* Retain existing base color */
+    margin: 0;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #0056b3, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient applies to text */
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Deeper shadow for more depth */
+    position: relative; /* Necessary for underline */
+    z-index: 1;
+}
+
+.about-title::after {
+    content: "";
+    display: block;
+    width: 100%; /* Underline spans the full width of the title */
+    height: 4px;
+    background: linear-gradient(90deg, #0056b3, #00d4ff);
+    margin: 10px auto 0; /* Space between title and underline */
+    border-radius: 2px; /* Rounded edges for underline */
+    animation: expand-line 1s ease-in-out;
+}
+
+@keyframes expand-line {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.about-subtitle {
+    font-size: 24px; /* Slightly larger font size */
+    color: #6c757d;
+    margin-top: 10px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+  /* Section Styling */
+  .vision-section,
+  .mission-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+  
+  .hod-message-section {
+    padding: 30px;
+    background-color: #d8f9ff;
+    border-left: 6px solid #0077b6;
+    border-radius: 12px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  /* Image Styling */
+  .section-image {
+    flex: 1;
+    max-width: 270px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .section-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  .section-image-hod {
+    width: 300px; /* Increase width */
+    height: 300px; /* Ensure proportional height */
+    border-radius: 10px; /* Rounded corners */
+    margin: 0 auto; /* Center the image horizontally */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional shadow for aesthetics */
+    transition: transform 0.3s ease-in-out; /* Add hover effect */
+  }
+  
+  .section-image-hod:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+  }
+  
+  /* Text Content Styling */
+  .section-text {
+    flex: 2;
+    padding: 0 20px;
+  }
+  
+  /* Section Title Styling with Underline */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative; /* Needed for ::after positioning */
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 0; /* Start with no underline */
+    height: 3px;
+    background: #0056b3; /* Match the text color */
+    margin-top: -5px;
+    border-radius: 2px; /* Rounded edges for a softer look */
+    transition: width 0.5s ease; /* Smooth expand animation */
+    animation: expand-line 1s ease-in-out;
+}
+
+.section-title:hover::after, 
+.vision-section .section-title::after, 
+.mission-section .section-title::after {
+    width: 100%; /* Full-width underline on hover or specific sections */
+} 
+  .section-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #34495e;
+    text-align: justify;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .vision-section,
+    .mission-section {
+      flex-direction: column;
+    }
+  
+    .section-image {
+      width: 100%;
+    }
+  
+    .section-text {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .about-title {
+      font-size: 36px;
+    }
+  }
+  
+  /* Program Outcomes Section */
+.po-section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-left: 5px solid #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .po-section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .po-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #34495e;
+    line-height: 1.8;
+  }
+  
+  .po-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    text-indent: -20px;
+  }
+  
+  .po-list li::before {
+    content: "•";
+    color: #0056b3;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+/* Add animations for the fade-in effect */
+/* Animation styles */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .zoom-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .zoom-in-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Other styles for section formatting */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .section-content {
+    font-size: 1rem;
+  }
+  
+  .po-list {
+    list-style-type: none;
+  }
+  
+  .po-list li {
+    margin-bottom: 10px;
+  }
+  
+  
