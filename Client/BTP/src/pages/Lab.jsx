@@ -64,7 +64,7 @@ const Labs = () => {
           ],
         },
         {
-          name: "KOM Lab",
+          name: "Mechanisms and Machines Lab",
           semester: "4th Semester",
           documents: [
             { title: "Bi-Filar Suspension", url: "https://docs.google.com/document/d/1H7tp-w2wXPxzuhRs3d0iqhqMCRkC2h_I/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
@@ -105,6 +105,21 @@ const Labs = () => {
           ],
         },
         {
+          name: "ICM Lab",
+          semester: "4th Semester",
+          documents: [
+            { title: "Experiment_1", url: "https://drive.google.com/file/d/1hWkIDGB_FFRST2tJ6n8QaxWJk4CFK7Xf/view?usp=sharing" },
+            { title: "Experiment_2", url: "https://drive.google.com/file/d/1r0eKUFSdya5YzIIB8chyUdM9iX7Ss7jm/view?usp=sharing" },
+            { title: "Experiment_3", url: "https://drive.google.com/file/d/1RI8h-uad7-F6K63HyEM3xDPnZHpmGXat/view?usp=sharing" },
+            { title: "Experiment_4", url: "https://drive.google.com/file/d/1Y5fgms2bvSMlwhO5bzYbWtMr2ErademT/view?usp=sharing" },
+            { title: "Experiment_5", url: "https://drive.google.com/file/d/18PPRYfY9xxMYtBih2TQ6DYkeGYv_7Y4L/view?usp=sharing" },
+            { title: "Linear_Algebra", url: "https://drive.google.com/file/d/1g4WYOY-ARtQlesNYNPuCiSSVMjVInP0f/view?usp=sharing" },
+            { title: "Logical_Indexing", url: "https://drive.google.com/file/d/1nycBICcGAo3qBiFaQYrFIODh8nZMAiMi/view?usp=sharing" },
+            { title: "Errors and Approximation", url: "https://drive.google.com/file/d/1rzS4VL8h6IdzmhBfdAtsVwB6e3Uuj6uU/view?usp=sharing" },
+            { title: "Bisection and Newtons Raphson Method", url: "https://drive.google.com/file/d/1ruIWCxpIzVR3SSJ85Ol5Cdp4cVkpEYJz/view?usp=sharing" }
+          ],
+        },
+        {
           name: "CAD/CAM Lab",
           semester: "5th Semester",
           documents: [
@@ -137,8 +152,11 @@ const Labs = () => {
           name: "MD-2 Lab",
           semester: "5th Semester",
           documents: [
-            { title: "Machine Design Basics", url: "https://example.com/machine-design" },
-            { title: "Lab Problems", url: "https://example.com/lab-problems" },
+            { title: "Contact Analysis", url: "https://docs.google.com/presentation/d/16OUIeE0y7UTpzl2k3GLWQEUX78cyowiI/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "Couples analysis of gear", url: "https://docs.google.com/presentation/d/1_QyB09bADNY4_sK_KBiaw7uxnSuh1VWG/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "Rigid Dynamic Analysis", url: "https://docs.google.com/presentation/d/1fcvL3Zvm6nP8qbYle0t6dkwhlif_XlVp/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "Thermal Analysis", url: "https://docs.google.com/presentation/d/1gjr68_rdRHPVNoBhbceMSzsCV1RNkbYS/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" },
+            { title: "vibration analysis", url: "https://docs.google.com/presentation/d/16z9Igwgup4iQphNjeiY3DvKMdgpoJksv/edit?usp=sharing&ouid=108101547279956901268&rtpof=true&sd=true" }
           ],
         },
         {

@@ -2,11 +2,15 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/StudyMat.css";
 
-const StudyMaterial = () => {
+const StudyMat = () => {
   const navigate = useNavigate();
 
   const handleLabs = () => {
     navigate('/studyMat/labs');
+  };
+
+  const handleTheory = () => {
+    navigate('/studyMat/theory');
   };
 
   return (
@@ -23,7 +27,7 @@ const StudyMaterial = () => {
         </div>
 
         {/* Theory Section */}
-        <div className="study-section theory-section">
+        <div className="study-section theory-section" onClick={handleTheory}>
           <h2 className=" mt-[-8px] " >Theory</h2>
           <p>In-depth explanations, detailed analysis, and study notes.</p>
         </div>
@@ -38,4 +42,4 @@ const StudyMaterial = () => {
   );
 };
 
-export default StudyMaterial;
+export default StudyMat;

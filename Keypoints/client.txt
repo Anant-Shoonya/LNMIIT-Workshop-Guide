@@ -3,3 +3,4 @@ npm i react-router-dom react-toastify three react-icons
 
 for tailwind:
 npm install tailwindcss @tailwindcss/vite
+
