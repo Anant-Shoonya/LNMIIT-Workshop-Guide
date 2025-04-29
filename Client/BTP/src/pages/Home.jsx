@@ -227,10 +227,10 @@ const Home = () => {
 
         <div
           id="about"
-          className="section flex-col justify-between items-center space-y-6"
+          className="section flex-col justify-between items-center space-y-6 sixth-section"
         >
           <div
-            className="bg-white p-9 rounded-3xl shadow-2xl max-w-[1000px] mx-auto text-center space-y-7"
+            className="p-9 rounded-3xl shadow-2xl max-w-[1000px] mx-auto text-center space-y-7 bg-white bg-opacity-50 mb-[500px]"
             style={{ boxShadow: "0px 0px 500px rgba(0, 0, 0, 0.9)" }}
           >
             <h2 className=" font-extrabold text-3xl text-neutral-700 ">

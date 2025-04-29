@@ -87,3 +87,18 @@
 .login-redirect a:hover {
   text-decoration: underline;
 }
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.signup-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
+}

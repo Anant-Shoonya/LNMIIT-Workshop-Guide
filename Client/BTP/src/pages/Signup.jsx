@@ -17,24 +17,21 @@ function Signup() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-  
-    // Scene setup
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.position.z = 50;
-  
-    // Cube properties
+
     const cubeGroup = new THREE.Group();
-    const cubeCount = 1000; // Target density
-    const cubeRange = 200; // Cube placement range
-  
-    // Function to create a cube
+    const cubeCount = 1000;
+    const cubeRange = 200;
+
     const createCube = () => {
       const geometry = new THREE.BoxGeometry(1, 1, 1);
       const material = new THREE.MeshBasicMaterial({
-        color: Math.random() > 0.5 ? 0xffffff : 0x000000, // Black and white
+        color: Math.random() > 0.5 ? 0xffffff : 0x000000,
       });
       const cube = new THREE.Mesh(geometry, material);
       cube.position.set(
@@ -44,84 +41,68 @@ function Signup() {
       );
       return cube;
     };
-  
-    // Function to initialize cubes
+
     const initializeCubes = () => {
       for (let i = 0; i < cubeCount; i++) {
         cubeGroup.add(createCube());
       }
     };
-  
-    // Maintain density dynamically
+
     const maintainDensity = () => {
-      // Ensure a constant number of cubes in the scene
       while (cubeGroup.children.length < cubeCount) {
         const newCube = createCube();
-  
-        // Place the new cube slightly ahead or behind the camera along the z-axis
         newCube.position.z =
           Math.random() > 0.5
             ? camera.position.z - cubeRange
             : camera.position.z + cubeRange;
-  
+
         cubeGroup.add(newCube);
       }
     };
-  
-    // Initialize and add cubes to the scene
+
     initializeCubes();
     scene.add(cubeGroup);
-  
-    // Scroll-based motion
+
     let scrollPosition = 0;
     window.addEventListener("wheel", (event) => {
-      scrollPosition += event.deltaY * 0.5; // Adjust scroll sensitivity
+      scrollPosition += event.deltaY * 0.5;
     });
-  
-    // Mouse-based rotation
+
     let mouseX = 0;
     let mouseY = 0;
     window.addEventListener("mousemove", (event) => {
       mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     });
-  
-    // Animation loop
+
     const animate = () => {
       requestAnimationFrame(animate);
-  
-      // Smooth scroll-based movement
+
       cubeGroup.position.z += (scrollPosition - cubeGroup.position.z) * 0.1;
-  
-      // Smooth mouse-based rotation
       cubeGroup.rotation.x += (mouseY - cubeGroup.rotation.x) * 0.05;
       cubeGroup.rotation.y += (mouseX - cubeGroup.rotation.y) * 0.05;
-  
-      // Maintain cube density
+
       cubeGroup.children.forEach((cube) => {
         if (
           cube.position.z < camera.position.z - cubeRange ||
           cube.position.z > camera.position.z + cubeRange
         ) {
-          cubeGroup.remove(cube); // Remove cubes that are too far out of range
+          cubeGroup.remove(cube);
         }
       });
-  
-      maintainDensity(); // Add new cubes dynamically
+
+      maintainDensity();
       renderer.render(scene, camera);
     };
-  
+
     animate();
-  
-    // Cleanup
+
     return () => {
       window.removeEventListener("wheel", null);
       window.removeEventListener("mousemove", null);
       renderer.dispose();
     };
   }, []);
-  
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -167,10 +148,16 @@ function Signup() {
     <div className="signup-container">
       <canvas ref={canvasRef} className="background-canvas"></canvas>
       <div className="signup-form">
+        <div className="logo-row">
+          <img src='/assets/lnmiitLogo.png' alt="College Logo" className="signup-logo" />
+          <img src="/assets/lnmechLogo.png" alt="Brand Logo" className="signup-logo" />
+        </div>
+
         <div className="signup-header">
           <h1>Welcome!</h1>
           <p>Create your account to get started</p>
         </div>
+
         <form onSubmit={handleSignup}>
           <div className="input-group">
             <input
@@ -201,6 +188,7 @@ function Signup() {
           </div>
           <button type="submit" className="signup-button">Sign Up</button>
         </form>
+
         <p className="login-redirect">
           Already have an account? <Link to="/login">Log in</Link>
         </p>

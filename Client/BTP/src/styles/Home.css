@@ -228,11 +228,15 @@
 }
 
 .fourth-section{
-  background: url('/assets/studymat.webp') no-repeat center center/cover;
+  background: url('/assets/studymat.jpg') no-repeat center center/cover;
 }
 
 .fifth-section{
-  background: url('/assets/enter.webp') no-repeat center center/cover;
+  background: url('/assets/enter.jpg') no-repeat center center/cover;
+}
+
+.sixth-section{
+  background: url('/assets/about.jpg') no-repeat center center/cover;
 }
 
 /* Chatbot Button */

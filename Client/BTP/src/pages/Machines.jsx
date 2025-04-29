@@ -4,31 +4,31 @@ import { useNavigate } from "react-router-dom";
 
 const machinesData = [
   {
-    name: "Lathe Machine",
+    name: "Vertical Machining Center",
     description:
-      "Used for shaping metal or wood, the lathe is a fundamental tool in every mechanical workshop. It rotates the workpiece against cutting tools to perform operations like cutting, sanding, knurling, drilling, etc.",
+      "A VMC is a CNC machine tool where the spindle is vertically oriented, primarily used for precise milling, drilling, and tapping operations on metal parts. It offers high-speed and automated multi-axis machining capabilities.",
     image: "/assets/mach-1.jpg",
     route: "/lathe",
   },
   {
-    name: "Milling Machine",
+    name: "Electrical Discharge Machine",
     description:
-      "Milling machines are used to remove material from a workpiece by feeding it against a rotating multipoint cutter. It's used for gear cutting, slotting, and more.",
+      "A shaper is a machine tool that uses a single-point cutting tool moving linearly to machine flat surfaces, keyways, and slots. It's ideal for producing internal and external geometries on small to medium-sized workpieces.",
     image: "/assets/mach-2.jpg",
     route: "/milling",
   },
   {
-    name: "Drilling Machine",
+    name: "3D-Printing Machine",
     description:
-      "This machine is used for creating round holes in solid materials. The drill bit rotates to cut away material, and there are different types for different applications.",
+      "A 3D printer builds parts layer-by-layer using materials like plastic or metal, based on a CAD model, employing techniques such as FDM or SLS. It's revolutionizing prototyping and manufacturing with design flexibility and minimal material waste.",
     image: "/assets/mach-3.jpg",
     route: "/drilling",
   },
   {
-    name: "Drilling Machine",
+    name: "Shaper Machine",
     description:
-      "This machine is used for creating round holes in solid materials. The drill bit rotates to cut away material, and there are different types for different applications.",
-    image: "/assets/mach-3.jpg",
+      "EDM removes material from conductive workpieces using electrical sparks between a tool and the workpiece, ideal for hard or complex shapes. It's widely used for die-making, precision molds, and intricate cavities.",
+    image: "/assets/mach-4.jpg",
     route: "/drilling",
   },
   // Add more machines as needed
